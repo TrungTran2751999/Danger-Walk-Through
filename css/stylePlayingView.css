@@ -1,0 +1,306 @@
+/* Show Game Over----------------------------------------------------------------------- */
+.dialog-level{
+    font-weight: 900;
+    color: #ffffffb8;
+    font-size: 30px;
+  }
+  #dialog-game-over, #dialog-game-clear{
+    position: absolute;
+    top: 49px;
+    display: none;
+    width: 503px;
+    height: 503px;
+    background-color: #00000059;
+  }
+  #background-playing{
+    position: absolute;
+    top: -15px;
+    left: -147px;
+    width: 652px;
+    height: 520px;
+    z-index: -1;
+    border: 6px solid red;
+}
+  .dialog-over, .dialog-clear{
+    display: none;
+    background-image: url(../../image/client/background.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    scale: 0.7;
+    position: absolute;
+    top: 34px;
+    animation: floatDown 2s ease-in-out;
+  }
+  .alert-score{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 104px;
+  }
+  .score-time{
+    position: absolute;
+    top: 71px;
+    left: -135px;
+  }
+  @keyframes floatDown{
+    from{
+      transform: scale(1.5);
+      opacity: 0;
+    }
+    to{
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  .imgGameOver{
+    background-image: url(../../image/dialog/gameOver.png);
+    background-size: cover;
+    scale: 0;
+    width: 1549px;
+    height: 391px;
+    position: relative;
+    top: 51px;
+    right: 525px;
+    transition: scale 2s;
+  }
+  .showOver{
+    scale: 0.3;
+  }
+  .title-dialog{
+    text-align: center;
+    margin-top: 115px;
+  }
+  .list-button-dialog{
+    display: flex;
+    gap: 70px;
+  }
+  .restart-button, .quit-button{
+    position: relative;
+    top: 31px;
+    right: 88px;
+    text-align: center;
+
+  }
+/* Show Game Clear----------------------------------------------------------------------- */
+  .dialog-clear{
+    display: none;
+  }
+  .imgGameClear{
+    background-image: url(../../image/dialog/gameClear.png);
+    background-size: cover;
+    scale: 0;
+    width: 1014px;
+    height: 391px;
+    position: relative;
+    top: 51px;
+    right: 253px;
+    transition: scale 2s;
+  }
+  .showClear{
+    scale: 0.3;
+  }
+  .coinLogo{
+    width: 30px;
+    height: 30px;
+  }
+  .pause, .quit, .fake-pause, .fake-quit, .audio{
+    background-image: url(../../image/client/button2.png);
+    background-size: cover;
+    width: calc(332px / 2.5);
+    height: calc(128px / 2.5);
+    text-align: center;
+  }
+  .title-pause, .title-quit, .title-audio,.title-audio:hover{
+    padding-top: 14px;
+    color: white;
+    font-weight: 900;
+  }
+  .title-pause:hover, .title-quit:hover, .title-audio:hover{
+    color: brown;
+  }
+  .pause:hover,.quit:hover, .audio:hover{
+    scale: 1.08;
+  }
+  #list-button-quit{
+    display: none;
+  }
+  .dialog-alert-game{
+    display: none;
+    background-image: url(../../image/client/background.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    scale: 2.7;
+    position: absolute;
+    top: 190px;
+    left: 331px;
+    animation: floatIn 1s ease-in-out;
+  }
+  #show-dialog-game{
+    display: none;
+  }
+  .title-dialog-out-game{
+    font-size: 9px;
+  }
+  .list-button-out-game{
+    display: flex;
+    margin-top: -23px;
+  }
+  .list-button-out-game .resume-game, .list-button-out-game .quit-game{
+    scale: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-size: 12px;
+    margin: 85px auto;
+    scale: 1.3;
+  }
+  .list-button-out-game .resume-game:hover, .list-button-out-game .quit-game:hover{
+    scale: 1.5;
+    color: brown;
+  }
+  .title-btn{
+    margin-top: -3px;
+    text-align: center;
+    font-size: 20.5px;
+  }
+  .title-shutdown{
+    text-align: center;
+    margin-top: 37px;
+  }
+  #show-dialog-pause{
+    display: none;
+  }
+  #show-dialog-audio{
+    display: none;
+  }
+  .dialog-alert-game-pause, .dialog-alert-game, .dialog-audio{
+    background-image: url(../../image/client/background.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    display: block;
+    scale: 0.7;
+    position: absolute;
+    top: 36px;
+    left: 6px;
+    animation: floatIn 1s ease-in-out;
+  }
+  .dialog-audio{
+    scale: 1;
+    width: calc(497px*0.9);
+    height: calc(370px*0.9);
+    top: 88px;
+    left: 31px;
+  }
+  .dialog-audio table{
+    margin: 0px auto;
+    margin-top: 48px;
+  }
+  .dialog-audio table .volumne-control{
+    width: 200px;
+    text-align: center;
+  }
+  .title-dialog-pause-game, .title-dialog-out-game{
+    text-align: center;
+    margin-top: 100px;
+    font-size: 46px;
+  }
+  .continue-game{
+    margin: 65px auto;
+    scale: 1.6;
+  }
+  .continue-game:hover{
+    scale: 1.8;
+    color: brown;
+  }
+  .resume-gaming{
+    text-align: center;
+  }
+  #list-fake-button{
+    display: none;
+  }
+  #list-real-button{
+    display: block;
+  }
+  .logoPlaying{
+    width: 50px;
+    height: 50px;
+    margin-left: 7px;
+  }
+  #audioMute{
+    display: block;
+  }
+  #audioPlay{
+    display: none;
+  }
+  .volume{
+    width: 30px;
+  }
+  .audio-game{
+    margin: 0px auto;
+    margin-top: -9px;
+    scale: 0.9;
+  }
+  .audio-game:hover{
+    scale: 1;
+    color: brown;
+  }
+  #coinMute, #gameOverMute, #gameClearMute, #backgroundMute{
+    display: none;
+  }
+  #coinPlay, #gameOverPlay, #gameClearPlay, .backgroundPlay{
+    display: block;
+  }
+  @keyframes floatIn{
+    from{
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to{
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  .rangeVolume{
+      appearance: none;
+      width: 75%;
+      height: 17px;
+      background-image: url(../image/client/track.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color:rgba(0,0,0,0);
+  }
+  .rangeVolume::-webkit-slider-thumb{
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      background-image: url(../image/client/thumb.png);
+      background-size: cover;
+  }
+  /* #dialog-history-playing{
+    display: none;
+    background-image: url(../../image/client/background.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    scale: 0.7;
+    position: absolute;
+    left: 368px;
+    top: 67px;
+    animation: floatIn 2s ease-in-out;
+  } */
+  .info{
+    background-image: url('../image/client/info.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    margin-left: 40px;
+  }
+  .info:hover{
+    scale: 1.1;
+  }
+

@@ -1,0 +1,158 @@
+@font-face {
+  font-family: Pixel;
+  src: url(../font/visitor1.ttf);
+}
+*{
+  cursor: url(../../image/client/cusor.png), auto;
+}
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: url(../../image/client/cusor.png), auto;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+.total-container{
+    margin-left: 426px;
+    margin-top: 50px;
+}
+#playing-view{
+    position: relative;
+}
+
+#background{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    z-index: -1;
+}
+.container{
+    width: 500px;
+    height: 500px;
+}
+#begin-view, #option-view, #history-view{
+    text-align: center;
+    background-image: url(../../image/client/background.png);
+    background-clip: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    padding-top: 55px;
+}
+#history-view table{
+  margin: 0px auto;
+  width: 400px;
+}
+#history-view{
+  display: none;
+}
+#begin-view{
+    display: block;
+}
+#option-view{
+    display: none;
+}
+#playing-view{
+    display: none;
+}
+.title{
+    font-weight: bolder;
+    font-size: 33px;
+    color: white;
+    opacity: 0.7;
+}
+.list-button{
+    margin-left: 190px;
+}
+.styleButton{
+    margin-top: 30px;
+    padding: 10px;
+    width: 100px;
+    height: 24px;
+    scale: 1.3;
+    font-weight: bolder;
+    color: wheat;
+    background-image: url(../../image/client/buttonRect.png);
+    background-size: cover;
+}
+#option-view{
+    padding-top: 20px;
+}
+.option:hover, .start:hover, .easy-level:hover, .difficult-level:hover, .hard-level:hover, .back:hover,
+.yes-button:hover, .no-button:hover, .restart-button:hover, .quit-button:hover, .history:hover
+{
+    scale: 1.35;
+    color: brown;
+    cursor: url(../../image/client/cusor.png), auto;
+}
+
+.container-checkbox {
+    display: block;
+    position: relative;
+    padding-right: 143px;
+    margin-bottom: 42px;
+    font-size: 22px;
+    color: #ffffffb8;
+    font-weight: bolder;
+  }
+  
+  /* Hiển thị radio mặc định */
+  .container-checkbox input {
+    position: absolute;
+    opacity: 0;
+  }
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    background-image: url(../../image/client/checkbox.png);
+    background-size: cover;
+  }
+
+  .container-checkbox:hover input ~ .checkmark {
+        opacity: 0.8;
+        cursor: url(../../image/client/cusor.png), auto;
+  }
+  .container-checkbox input:checked ~ .checkmark {
+    background-image: url(../../image/client/checkbox.png);
+    background-size: cover;
+  }
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  .container-checkbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  .container-checkbox .checkmark:after {
+      top: -10px;
+      left: 0px;
+      background-image: url(../../image/client/checked.png);
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+}
+  .list-radio{
+    margin-top: 12px;
+  }
+  .label-checkbox{
+    padding-top: 12px;
+    padding-top: 12px;
+    padding-left: 50px;
+  }
+  #level{
+    display: none;
+  }
+  #level{
+    margin-top: 50px;
+  }
+  .cancel-history-dialog{
+    margin: 0px auto;
+    scale: 1;
+  }
+  .cancel-history-dialog:hover{
+    color: brown;
+    scale: 1.1;
+  }
+

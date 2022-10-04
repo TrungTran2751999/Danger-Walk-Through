@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylePlayingView.css">
+</head>
+<body>
+    <div class="total-container">
+        <div class="container">
+            <div id="begin-view">
+                <div class="title">DANGEROUS WALK-THROUGH</div>
+                <div class="list-button">
+                    <div class="start styleButton">Start</div>
+                    <div class="option styleButton">Option</div>
+                    <div class="history styleButton">History</div>
+                </div>
+            </div>
+            <div id="history-view">
+                <table border="1">
+                    <thead>
+                        <th style="width: 10%">ID</th>
+                        <th style="width: 23%">Time Clear</th>
+                        <th style="width: 23%">Level</th>
+                        <th>Time</th>
+                    </thead>
+                    <tbody>
+                       
+                    </tbody>
+                </table>
+                <div class="cancel-history-dialog styleButton">Cancel</div>
+            </div>
+            <!-- CHOOSE LEVEL -->
+            <div id="option-view">
+                <div class="list-button" id="list-button-option">
+                    <div class="list-radio">
+                        <label class="container-checkbox">
+                            <div class="label-checkbox">Easy</div>
+                            <input type="radio" value="1" checked="checked" level="Easy" name="radio-option">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container-checkbox">
+                            <div class="label-checkbox">Hard</div>
+                            <input type="radio" value="2" name="radio-option" level="Hard">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container-checkbox">
+                            <div class="label-checkbox">Difficult</div>
+                            <input type="radio" value="3" name="radio-option" level="Difficult">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="styleButton back">Back</div>
+                </div>
+                <!-- ------------------------------------------- -->
+                <div id="level">
+                    <div class="dialog-level">Are you sure ?</div>
+                    <div class="list-button button-level-change">
+                        <div class="yes-button styleButton">Yes</div>
+                        <div class="no-button styleButton">No</div>
+                    </div>
+                </div>
+            </div>
+            <div id="playing-view">
+                <div id="background-playing"></div>
+                <div class="container-view-playing">
+                    <img src="./image/background.png" id="background">
+                    <canvas id="canvas" width="500" height="500" style="border: 1px solid red;"></canvas>
+                    <div class="score-time">
+                            <table style="border-collapse: collapse">
+                                <tr>
+                                    <td><img src="./image/client/coinLogo.png" class="coinLogo"></td>
+                                    <td><div class="score"></div></td>
+                                </tr>
+                                <tr>
+                                    <td><img src="" class="coinLogo" id="hoursglass"></td>
+                                    <td><div class="time"></div></td>
+                                </tr>
+                            </table>
+                            <div id="list-real-button">
+                                <div class="pause" id="pause-disabled">
+                                    <div class="title-pause">PAUSE</div>
+                                </div>
+                                <div class="audio" id="auidio-disabled">
+                                    <div class="title-audio">AUDIO</div>
+                                </div>
+                                <div class="quit" id="quit-disabled">
+                                    <div class="title-quit">QUIT</div>
+                                </div>
+                            </div>
+                            <!-- Fake Button -->
+                            <div id="list-fake-button">
+                                <div class="fake-pause">
+                                    <div class="title-pause">PAUSE</div>
+                                </div>
+                                <div class="audio" id="audio-disabled">
+                                    <div class="title-pause">AUDIO</div>
+                                </div>
+                                <div class="fake-quit" id="quit-disabled">
+                                    <div class="title-quit">QUIT</div>
+                                </div>
+                            </div>
+                            <!-- ------------------ -->
+                            </div>
+                            <!-- QUIT GAME -->
+                            <div class="dialog-alert-game" id="show-dialog-game">
+                                <div class="title-dialog-out-game">
+                                    <div class="title-shutdown">Resume or Quit game</div>
+                                </div>
+                                <div class="list-button-out-game">
+                                    <div class="resume-game styleButton">
+                                        <div class="title-btn resume-gaming">Resume</div> 
+                                    </div>
+                                    <div class="quit-game styleButton">
+                                        <div class="title-btn quit-gaming">Quit</div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ------------------------------------------------ -->
+                            <!-- PAUSE GAME -->
+                            <div class="dialog-alert-game-pause" id="show-dialog-pause">
+                                <div class="title-dialog-pause-game">
+                                    <div class="title-pause-dialog">Resume game</div>
+                                </div>
+                                <div class="continue-game styleButton">
+                                    <div class="resume-gaming continue-gaming">Resume</div> 
+                                </div>
+                            </div>
+                            <!-- ---------------------------------------------------------------- -->
+                            <div class="dialog-audio" id="show-dialog-audio">
+                                <table>
+                                    <tr>
+                                        <td>Background</td>
+                                        <td class="volumne-control">
+                                            <input class="rangeVolume" type="range" min = "0" max="100" value="100" id="backgroundVolume" name="point" oninput="controlVolumne(this.id)">
+                                        </td>
+                                        <td class="backgroundVolume">100</td>
+                                        <td>
+                                            <img src="./image/client/audioMuted.png" class="logoPlaying logoAudio" id="backgroundMute">
+                                            <img src="./image/client/audioPlay.png" class="logoPlaying logoAudio" id="backgroundPlay">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Coin</td>
+                                        <td class="volumne-control">
+                                            <input class="rangeVolume" type="range" min = "0" max="100" value="100" id="coinVolume" name="point" oninput="controlVolumne(this.id)">
+                                        </td>
+                                        <td class="coinVolume">100</td>
+                                        <td>
+                                            <img src="./image/client/audioMuted.png" class="logoPlaying logoAudio" id="coinMute">
+                                            <img src="./image/client/audioPlay.png" class="logoPlaying logoAudio" id="coinPlay">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Game Over</td>
+                                        <td class="volumne-control">
+                                            <input class="rangeVolume" type="range" min = "0" max="100" value="100" id="gameOverVolume" name="point" oninput="controlVolumne(this.id)">
+                                        </td>
+                                        <td class="gameOverVolume">100</td>
+                                        <td>
+                                            <img src="./image/client/audioMuted.png" class="logoPlaying logoAudio" id="gameOverMute">
+                                            <img src="./image/client/audioPlay.png" class="logoPlaying logoAudio" id="gameOverPlay">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Game Clear</td>
+                                        <td class="volumne-control">
+                                            <input class="rangeVolume" type="range" min = "0" max="100" value="100" id="gameClearVolume" name="point" oninput="controlVolumne(this.id)">
+                                        </td>
+                                        <td class="gameClearVolume">100</td>
+                                        <td>
+                                            <img src="./image/client/audioMuted.png" class="logoPlaying logoAudio" id="gameClearMute">
+                                            <img src="./image/client/audioPlay.png" class="logoPlaying logoAudio" id="gameClearPlay">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="audio-game styleButton">
+                                    <div class="resume-gaming continue-gaming">Save</div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- GAME OVER DIALOG -->
+                <div id="dialog-game-over">
+                    <div class="imgGameOver"></div>
+                    <div class="dialog-over">
+                        <div class="title title-dialog">Restart or Quit game</div>
+                        <div class="list-button list-button-dialog">
+                            <div class="restart-button styleButton">Restart</div>
+                            <div class="quit-button styleButton">Quit</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ----------------------- -->
+                <!-- Dialog-game-clear -->
+                <div id="dialog-game-clear">
+                    <div class="imgGameClear"></div>
+                    <div class="dialog-clear">
+                        <div class="alert-score">
+    
+                        </div>
+                        <div class="list-button list-button-dialog">
+                            <div class="restart-button styleButton">Restart</div>
+                            <div class="quit-button styleButton">Quit</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ------------------------------------------ -->
+            </div>
+        </div>
+        <div style="display: none;">
+            <img src="./image/imageCar/car1.png" id="car1">
+            <img src="./image/imageCar/car2.png" id="car2">
+            <img src="./image/imageCar/car3.png" id="car3">
+            <img src="./image/imageCar/car4.png" id="car4">
+            <img src="./image/imageCar/car5.png" id="car5">
+            <img src="./image/imageCar/car6.png" id="car6">
+            <img src="./image/imageCar/car7.png" id="car7">
+            <img src="./image/imageCar/car8.png" id="car8">
+            <img src ="./image/imageCar/coin.png" id="coin">
+            <img src="./image/main.png" id="main-image" >
+            <img src="./image/trafficLight.png" id="traffic-light" >
+            <audio controls id="backgroundMusic" loop>
+                <source src="./audio/backgroundMusic.mp3" >
+            </audio>
+        </div>
+        <script src="game.js" type="module"></script>
+        <script>
+            function controlVolumne(id){
+                let volume = document.getElementById(id).value;
+                document.getElementsByClassName(id)[0].innerHTML = volume;
+            }
+        </script>
+    </div>
+</body>
+</html>

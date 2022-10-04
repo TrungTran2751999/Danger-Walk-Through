@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .marign{
+        margin-bottom: 100px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="bt-1 margin">
+            <h2>Bt-122</h2>
+            <input type="number" name="" id="bt-1-input">
+            <button id="bt-1" onclick="handle()">Submit</button>
+            <div class="result-bt-1"></div>
+        </div>
+        <div class="bt-2 margin">
+            <h2>Bt-123</h2>
+            <input type="number" name="" id="bt-2-input">
+            <button id="bt-2" onclick="handle()">Submit</button>
+            <div class="result-bt-2"></div>
+        </div>
+        <div class="bt-3 margin">
+            <h2>Bt-124</h2>
+            <input type="number" name="" id="bt-3-input">
+            <button id="bt-3" onclick="handle()">Submit</button>
+            <div class="result-bt-3"></div>
+        </div>
+    </div>
+    <script>
+        function randomNumber(max, min){
+            let randomNumber = Math.floor(Math.random()*(max-min) + min)
+            return randomNumber
+        }
+        function pushRandomNumber(array,id){
+            let arrayLength = Number(document.querySelector(id).value);
+                for(let i=1; i<=arrayLength; i++){
+                    array.push(randomNumber(3000,1));
+                }
+            let prevArr = `${array}`;
+                return prevArr;
+        }
+        function handle(){
+            let id = event.srcElement.id;
+            switch(id){
+                case 'bt-1':{
+                    let idInput = document.querySelector('#bt-1-input').value;
+                    let array = [];
+                    let prevArr = pushRandomNumber(array, '#bt-1-input');
+                    array.sort((a,b)=>b-a);
+                    if(idInput > 0){
+                        document.querySelector('.result-bt-1').innerHTML = `${array[0]} is max number is [${prevArr}]`;
+                    }
+                    break;
+                };
+                case 'bt-2':{
+                    let idInput = document.querySelector('#bt-1-input').value;
+                    let array = [];
+                    let prevArr = pushRandomNumber(array, '#bt-2-input');
+                    array.sort((a,b)=>a-b);
+                    if(idInput > 0){
+                        document.querySelector('.result-bt-2').innerHTML = `${array[0]} is min number is [${prevArr}]`;
+                    }
+                    break;
+                };
+                case 'bt-3':{
+                    let idInput = document.querySelector('#bt-1-input').value;
+                    let array = [];
+                    let anwser = ''
+                    let prevArr = pushRandomNumber(array, '#bt-3-input');
+                    for(let item of array){
+                        if(item % 2 && item < 2004){
+                            anwser = 'No exist';
+                        }else{
+                            anwser = 'Exist';
+                        }
+                    };
+                    if(idInput > 0){
+                        document.querySelector('.result-bt-3').innerHTML = `${anwser} even value that smaller than 2004 in [${array}] `;
+                    }
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
