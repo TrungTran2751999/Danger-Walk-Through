@@ -23,7 +23,7 @@
 }
   .dialog-over, .dialog-clear{
     display: none;
-    background-image: url(../../image/client/background.png);
+    background-image: url(../image/client/background.png);
     background-size: auto;
     background-repeat: no-repeat;
     width: 100%;
@@ -54,7 +54,7 @@
     }
   }
   .imgGameOver{
-    background-image: url(../../image/dialog/gameOver.png);
+    background-image: url(../image/dialog/gameOver.png);
     background-size: cover;
     scale: 0;
     width: 1549px;
@@ -87,7 +87,7 @@
     display: none;
   }
   .imgGameClear{
-    background-image: url(../../image/dialog/gameClear.png);
+    background-image: url(../image/dialog/gameClear.png);
     background-size: cover;
     scale: 0;
     width: 1014px;
@@ -105,7 +105,7 @@
     height: 30px;
   }
   .pause, .quit, .fake-pause, .fake-quit, .audio{
-    background-image: url(../../image/client/button2.png);
+    background-image: url(../image/client/button2.png);
     background-size: cover;
     width: calc(332px / 2.5);
     height: calc(128px / 2.5);
@@ -127,7 +127,7 @@
   }
   .dialog-alert-game{
     display: none;
-    background-image: url(../../image/client/background.png);
+    background-image: url(../image/client/background.png);
     background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
@@ -176,7 +176,7 @@
     display: none;
   }
   .dialog-alert-game-pause, .dialog-alert-game, .dialog-audio{
-    background-image: url(../../image/client/background.png);
+    background-image: url(../image/client/background.png);
     background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
@@ -282,7 +282,7 @@
   }
   /* #dialog-history-playing{
     display: none;
-    background-image: url(../../image/client/background.png);
+    background-image: url(../image/client/background.png);
     background-size: auto;
     background-repeat: no-repeat;
     width: 100%;

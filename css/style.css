@@ -3,11 +3,11 @@
   src: url(../font/visitor1.ttf);
 }
 *{
-  cursor: url(../../image/client/cusor.png), auto;
+  cursor: url(../image/client/cusor.png), auto;
 }
 body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    cursor: url(../../image/client/cusor.png), auto;
+    cursor: url(../image/client/cusor.png), auto;
     overflow-y: hidden; /* Hide vertical scrollbar */
     overflow-x: hidden; /* Hide horizontal scrollbar */
 }
@@ -31,7 +31,7 @@ body{
 }
 #begin-view, #option-view, #history-view{
     text-align: center;
-    background-image: url(../../image/client/background.png);
+    background-image: url(../image/client/background.png);
     background-clip: cover;
     background-repeat: no-repeat;
     height: 500px;
@@ -70,7 +70,7 @@ body{
     scale: 1.3;
     font-weight: bolder;
     color: wheat;
-    background-image: url(../../image/client/buttonRect.png);
+    background-image: url(../image/client/buttonRect.png);
     background-size: cover;
 }
 #option-view{
@@ -81,7 +81,7 @@ body{
 {
     scale: 1.35;
     color: brown;
-    cursor: url(../../image/client/cusor.png), auto;
+    cursor: url(../image/client/cusor.png), auto;
 }
 
 .container-checkbox {
@@ -105,16 +105,16 @@ body{
     left: 0;
     height: 50px;
     width: 50px;
-    background-image: url(../../image/client/checkbox.png);
+    background-image: url(../image/client/checkbox.png);
     background-size: cover;
   }
 
   .container-checkbox:hover input ~ .checkmark {
         opacity: 0.8;
-        cursor: url(../../image/client/cusor.png), auto;
+        cursor: url(../image/client/cusor.png), auto;
   }
   .container-checkbox input:checked ~ .checkmark {
-    background-image: url(../../image/client/checkbox.png);
+    background-image: url(../image/client/checkbox.png);
     background-size: cover;
   }
   .checkmark:after {
@@ -128,7 +128,7 @@ body{
   .container-checkbox .checkmark:after {
       top: -10px;
       left: 0px;
-      background-image: url(../../image/client/checked.png);
+      background-image: url(../image/client/checked.png);
       background-size: cover;
       width: 100%;
       height: 100%;
