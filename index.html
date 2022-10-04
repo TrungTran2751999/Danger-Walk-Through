@@ -68,7 +68,7 @@
                 <div id="background-playing"></div>
                 <div class="container-view-playing">
                     <img src="./image/background.png" id="background">
-                    <canvas id="canvas" width="500" height="500" style="border: 1px solid red;"></canvas>
+                    <canvas id="canvas" width="500" height="500"></canvas>
                     <div class="score-time">
                             <table style="border-collapse: collapse">
                                 <tr>
@@ -90,6 +90,7 @@
                                 <div class="quit" id="quit-disabled">
                                     <div class="title-quit">QUIT</div>
                                 </div>
+                                <div class="info" id="info-disabled"></div>
                             </div>
                             <!-- Fake Button -->
                             <div id="list-fake-button">
@@ -102,6 +103,7 @@
                                 <div class="fake-quit" id="quit-disabled">
                                     <div class="title-quit">QUIT</div>
                                 </div>
+                                <div class="info" id="info-disabled"></div>
                             </div>
                             <!-- ------------------ -->
                             </div>
@@ -129,7 +131,17 @@
                                     <div class="resume-gaming continue-gaming">Resume</div> 
                                 </div>
                             </div>
-                            <!-- ---------------------------------------------------------------- -->
+                            <!-- GUINESS-SCORE -->
+                            <div class="dialog-guiness-score" id="show-dialog-guiness">
+                                <div class="title-dialog-pause-game">
+                                    <div class="title-guiness-dialog"></div>
+                                </div>
+                                <div class="guiness-game styleButton">
+                                    <div class="close-guiness continue-gaming">Close</div> 
+                                </div>
+                            </div>
+                            <!-- ----------------------------------------------------------------- -->
+                            <!-- AUDIO -->
                             <div class="dialog-audio" id="show-dialog-audio">
                                 <table>
                                     <tr>
@@ -181,6 +193,7 @@
                                     <div class="resume-gaming continue-gaming">Save</div> 
                                 </div>
                             </div>
+                            <!-- ------------------------------------------------------------------- -->
                         </div>
                     </div>
                 </div>
@@ -196,7 +209,7 @@
                     </div>
                 </div>
                 <!-- ----------------------- -->
-                <!-- Dialog-game-clear -->
+                <!-- GAME-CLEAR-DIALOG -->
                 <div id="dialog-game-clear">
                     <div class="imgGameClear"></div>
                     <div class="dialog-clear">
@@ -210,6 +223,7 @@
                     </div>
                 </div>
                 <!-- ------------------------------------------ -->
+                
             </div>
         </div>
         <div style="display: none;">

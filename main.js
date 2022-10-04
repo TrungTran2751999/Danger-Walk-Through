@@ -238,16 +238,12 @@ function drawMain(){
     }
     ctx.beginPath();
         ctx.drawImage(imageMain, status[i][0], status[i][1], status[i][2], status[i][3], main.x, main.y, main.width, main.height);
-        ctx.rect(main.x, main.y, main.width, main.height);
-        ctx.stroke();
     ctx.closePath();
 }
 function drawBank(){
     for(let i=0; i<bankPos.length; i++){
         ctx.beginPath();
         ctx.rect(bankPos[i][0], bankPos[i][1], bankPos[i][2], bankPos[i][3]);
-        ctx.stroke();
-        ctx.closePath();
     }
 }
 requestAnimationFrame(drawMain)

@@ -138,6 +138,35 @@ function showInfoHistory(){
     })
 
 }
+function showGuinessScore(){
+    document.querySelector('.info').addEventListener('click', ()=>{
+        document.getElementById('show-dialog-guiness').style.display = 'block';
+        let levels = document.getElementsByName('radio-option');
+        for(let i in levels){
+            if(levels[i].checked == true){
+                let name = levels[i].getAttributeNames()[3];
+                let guiness = levels[i].getAttribute(name);
+                let dataGuiness = '';
+                let stringDialog = '';
+                if(localStorage.getItem('guiness'+ guiness) != null){
+                    dataGuiness = JSON.parse(localStorage.getItem('guiness'+ guiness));
+                    stringDialog = `Guiness Score <br>
+                                    ${dataGuiness.timeMinutes < 10 ? '0'+ dataGuiness.timeMinutes:dataGuiness.timeMinutes} -
+                                    ${dataGuiness.timeSeconds < 10 ? '0'+ dataGuiness.timeSeconds:dataGuiness.timeSeconds}s
+                                    <div style="font-size: 30px">at ${dataGuiness.nowTime}</div>`
+                }else{
+                    stringDialog = "Let's break record";
+                }
+                document.querySelector('.title-guiness-dialog').innerHTML = stringDialog;
+            }
+        }
+        pauseGame();
+    })
+    document.querySelector('.close-guiness').addEventListener('click', ()=>{
+        document.getElementById('show-dialog-guiness').style.display = 'none';
+        resumeGame();
+    })
+}
 // define function------------------------------------------------------------
 function startGame(){
     document.getElementById('begin-view').style.display = 'none';
@@ -216,4 +245,4 @@ function playBackgroundMusic(){
 export {startingGame, openingOptionView, changingLevel, notAgreeChangeLevel, 
         agreeChangeLevel, exitGame, quitGame, restartPlaying, restartGame, showQuitGameDialog, 
         showPauseGamDialog, disableShowButton, switchAudio, showAudioDialog, controlVolume, playBackgroundMusic,
-        switchBackGroundAudio, showInfoHistory};
+        switchBackGroundAudio, showInfoHistory, showGuinessScore};

@@ -169,13 +169,10 @@
     text-align: center;
     margin-top: 37px;
   }
-  #show-dialog-pause{
+  #show-dialog-pause, #show-dialog-audio, #show-dialog-guiness{
     display: none;
   }
-  #show-dialog-audio{
-    display: none;
-  }
-  .dialog-alert-game-pause, .dialog-alert-game, .dialog-audio{
+  .dialog-alert-game-pause, .dialog-alert-game, .dialog-audio, .dialog-guiness-score{
     background-image: url(../image/client/background.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -208,15 +205,18 @@
     margin-top: 100px;
     font-size: 46px;
   }
-  .continue-game{
+  .continue-game, .guiness-game{
     margin: 65px auto;
     scale: 1.6;
   }
-  .continue-game:hover{
+  .guiness-game{
+    margin-top: 40px;
+  }
+  .continue-game:hover, .guiness-game:hover{
     scale: 1.8;
     color: brown;
   }
-  .resume-gaming{
+  .resume-gaming, .close-guiness{
     text-align: center;
   }
   #list-fake-button{

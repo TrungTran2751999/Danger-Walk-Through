@@ -7,9 +7,7 @@ function drawCar(assetListCar){
         ctx.beginPath();
         ctx.drawImage(assetListCar[i][0], assetListCar[i][1], assetListCar[i][2], assetListCar[i][3],
                     assetListCar[i][4], assetListCar[i][5], assetListCar[i][6], assetListCar[i][7],
-                    assetListCar[i][8])
-        ctx.rect(assetListCar[i][5], assetListCar[i][6], assetListCar[i][7], assetListCar[i][8]);
-        ctx.stroke();
+                    assetListCar[i][8]);
         ctx.closePath();
     }
 }

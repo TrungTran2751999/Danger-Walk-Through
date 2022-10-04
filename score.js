@@ -18,6 +18,15 @@ function convertSingleTime(time){
         return `${time}`;
     }
 }
+function guinessScore(level){
+    if(level == 'Easy'){
+        return 'guinessEasy';
+    }else if(level == 'Hard'){
+        return 'guinessHard';
+    }else{
+        return 'guinessDifficult';
+    }
+}
 function updateTimePlay(){
     if(main.isGameClear){
         stopCount++;
@@ -34,29 +43,32 @@ function updateTimePlay(){
             let date = new Date();
             let nowTime = `${date.getDate()+'-'+ (date.getMonth()+1)+'-'+date.getFullYear()+'-'
                             +convertSingleTime(date.getHours())+':'+convertSingleTime(date.getMinutes())+':'+convertSingleTime(date.getSeconds())}`;
-            console.log()
             let listTime = new newHistory(time.timeCount, time.minutes, time.seconds, nowTime, level);
 
             if(localStorage.getItem('historyPlaying') == null){
                 localStorage.setItem('historyPlaying', JSON.stringify([listTime]));
-                localStorage.setItem('guinessScore', JSON.stringify(listTime));
+                localStorage.setItem(guinessScore(level), JSON.stringify(listTime));
             }else{
                 let arr = JSON.parse(localStorage.getItem('historyPlaying'));
-                let updateGuiness = JSON.parse(localStorage.getItem('guinessScore'));
-                arr.unshift(listTime);
-                if(time.timeCount < updateGuiness.timeSeconds){
-                    localStorage.setItem('guinessScore', JSON.stringify(listTime));
+                let updateGuiness = JSON.parse(localStorage.getItem(guinessScore(level)));
 
+                arr.unshift(listTime);
+                if(localStorage.getItem(guinessScore(level))!=null){
+                    if(time.timeCount < updateGuiness.timeSeconds){
+                        localStorage.setItem(guinessScore(level), JSON.stringify(listTime));
+                    }
+                    if(arr.length > 8){
+                        arr.splice(arr.length-1, 1);
+                    }
+                    localStorage.setItem('historyPlaying', JSON.stringify(arr));
+                }else{
+                    localStorage.setItem(guinessScore(level), JSON.stringify(listTime));
                 }
-                if(arr.length > 8){
-                    arr.splice(arr.length-1, 1);
-                }
-                localStorage.setItem('historyPlaying', JSON.stringify(arr));
             }
             document.querySelector('.alert-score').innerHTML = `Time playing: 
                                                               ${time.minutes < 10 ? '0'+time.minutes : time.minutes}:
                                                               ${time.seconds < 10 ? '0'+time.seconds : time.seconds}`;
-            renderHistory()
+            renderHistory();
         }
     }else{
         stopCount = 0;
@@ -70,8 +82,8 @@ function renderHistory(){
             let updating = `<tr>
                                 <td>${index+1}</td>
                                 <td>
-                                    ${history.timeMinutes < 10 ?'0'+history.timeMinutes:history.timeMinutes}-
-                                    ${history.timeSeconds < 10 ?'0'+history.timeSeconds:history.timeSeconds}
+                                    ${history.timeMinutes < 10 ?'0'+history.timeMinutes:history.timeMinutes} -
+                                    ${history.timeSeconds < 10 ?'0'+history.timeSeconds+'s':history.timeSeconds +'s'}
                                 </td>
                                 <td>${history.level}</td>
                                 <td>${history.nowTime}</td>

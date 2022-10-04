@@ -5,7 +5,7 @@ function resetTime(){
     time.minutes = 0;
     time.hours = 0;
     time.timeCount = 0;
-    document.querySelector('.time').innerHTML = '00:00:00';
+    document.querySelector('.time').innerHTML = '00:00';
 }
 function countTime(){
     if(main.isGameClear == false && main.isGameOver == false){

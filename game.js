@@ -21,6 +21,7 @@ control.switchBackGroundAudio();
 control.controlVolume();
 control.showAudioDialog();
 control.showInfoHistory();
+control.showGuinessScore();
 import {assetListCarRound1, coinPos, ctx, audio} from './variable.js';
 
 //Phần engine của game
@@ -55,20 +56,29 @@ function engine(){
 }
 engine();
 function renderHistory(){
+    let updating = '';
     if(localStorage.getItem('historyPlaying') != null){
         let history = JSON.parse(localStorage.getItem('historyPlaying'));
         history.map((history, index)=>{
-            let updating = `<tr>
-                                <td>${index+1}</td>
-                                <td>
-                                    ${history.timeMinutes < 10 ?'0'+history.timeMinutes:history.timeMinutes}-
-                                    ${history.timeSeconds < 10 ?'0'+history.timeSeconds:history.timeSeconds}
-                                </td>
-                                <td>${history.level}</td>
-                                <td>${history.nowTime}</td>
-                            </tr>`;
+            updating = `<tr>
+                            <td>${index+1}</td>
+                            <td>
+                                ${history.timeMinutes < 10 ?'0'+history.timeMinutes:history.timeMinutes}-
+                                ${history.timeSeconds < 10 ?'0'+history.timeSeconds:history.timeSeconds}
+                            </td>
+                            <td>${history.level}</td>
+                            <td>${history.nowTime}</td>
+                        </tr>`;
         document.querySelector('#history-view table tbody').insertAdjacentHTML('beforeend', updating)
         })
+    }else{
+        updating = `<tr>
+                        <td>0</td>
+                        <td>Empty</td>
+                        <td>Empty</td>
+                        <td>Empty</td>
+                    </tr>`;
+        document.querySelector('#history-view table tbody').insertAdjacentHTML('beforeend', updating)
     }
 }
 renderHistory()

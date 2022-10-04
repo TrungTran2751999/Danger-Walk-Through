@@ -62,8 +62,6 @@ function drawCoin(x, y){
     if(main.score < main.maxScore){
         ctx.beginPath();
         ctx.drawImage(coinFrame[i][0], coinFrame[i][1], coinFrame[i][2], coinFrame[i][3], coinFrame[i][4], x, y, coinFrame[9], coinFrame[10]);
-        ctx.rect(x, y, coinFrame[9], coinFrame[10]);
-        ctx.stroke();
         ctx.closePath();
     }
 };
