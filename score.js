@@ -27,6 +27,20 @@ function guinessScore(level){
         return 'guinessDifficult';
     }
 }
+function showBreakRecord(time, image){
+    document.getElementById('imgGameClear').style.backgroundImage = `url('../image/dialog/${image}.png')`;
+    if(image == 'perfect'){
+        document.querySelector('.alert-score').innerHTML = `<div>Congratulation !!! <br>
+                                                        You've broken record <br>
+                                                        Time playing: ${time.minutes < 10 ? '0'+time.minutes:time.minutes} - 
+                                                                      ${time.seconds < 10 ? '0'+time.seconds:time.seconds}</div>`;
+    }
+    if(image == 'gameClear'){
+        document.querySelector('.alert-score').innerHTML = `Time playing: 
+                                                        ${time.minutes < 10 ? '0'+time.minutes : time.minutes}:
+                                                        ${time.seconds < 10 ? '0'+time.seconds : time.seconds}`;
+    }
+}
 function updateTimePlay(){
     if(main.isGameClear){
         stopCount++;
@@ -48,26 +62,29 @@ function updateTimePlay(){
             if(localStorage.getItem('historyPlaying') == null){
                 localStorage.setItem('historyPlaying', JSON.stringify([listTime]));
                 localStorage.setItem(guinessScore(level), JSON.stringify(listTime));
+                showBreakRecord(time, 'gameClear');
             }else{
                 let arr = JSON.parse(localStorage.getItem('historyPlaying'));
                 let updateGuiness = JSON.parse(localStorage.getItem(guinessScore(level)));
 
                 arr.unshift(listTime);
                 if(localStorage.getItem(guinessScore(level))!=null){
-                    if(time.timeCount < updateGuiness.timeSeconds){
+                    if(time.timeCount < updateGuiness.timeCount){
                         localStorage.setItem(guinessScore(level), JSON.stringify(listTime));
+                        showBreakRecord(time, 'perfect');
+                    }else{
+                        showBreakRecord(time, 'gameClear');
                     }
                     if(arr.length > 8){
                         arr.splice(arr.length-1, 1);
                     }
                     localStorage.setItem('historyPlaying', JSON.stringify(arr));
                 }else{
+                    showBreakRecord(time, 'gameClear');
                     localStorage.setItem(guinessScore(level), JSON.stringify(listTime));
                 }
             }
-            document.querySelector('.alert-score').innerHTML = `Time playing: 
-                                                              ${time.minutes < 10 ? '0'+time.minutes : time.minutes}:
-                                                              ${time.seconds < 10 ? '0'+time.seconds : time.seconds}`;
+           
             renderHistory();
         }
     }else{
