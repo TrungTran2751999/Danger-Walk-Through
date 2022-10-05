@@ -28,7 +28,7 @@ function guinessScore(level){
     }
 }
 function showBreakRecord(time, image){
-    document.getElementById('imgGameClear').style.backgroundImage = `url('../image/dialog/${image}.png')`;
+    document.getElementById('imgGameClear').style.backgroundImage = `url('./image/dialog/${image}.png')`;
     if(image == 'perfect'){
         document.querySelector('.alert-score').innerHTML = `<div>Congratulation !!! <br>
                                                         You've broken record <br>
