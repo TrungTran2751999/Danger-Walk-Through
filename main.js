@@ -8,7 +8,6 @@ let a=0;
 let mainDx = main.dx;
 let mainDy = main.dy;
 let status = assetListMain.up;
-
     document.addEventListener('keydown',(event)=>{
             if(event.key =='ArrowLeft'){
                 main.isDown = false;

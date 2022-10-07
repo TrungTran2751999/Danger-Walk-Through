@@ -104,22 +104,22 @@
     width: 30px;
     height: 30px;
   }
-  .pause, .quit, .fake-pause, .fake-quit, .audio{
+  .pause, .quit, .fake-pause, .fake-quit, .audio, .speed, .fake-speed{
     background-image: url(../image/client/button2.png);
     background-size: cover;
     width: calc(332px / 2.5);
     height: calc(128px / 2.5);
     text-align: center;
   }
-  .title-pause, .title-quit, .title-audio,.title-audio:hover{
+  .title-pause, .title-quit, .title-audio,.title-audio:hover,.title-speed{
     padding-top: 14px;
     color: white;
     font-weight: 900;
   }
-  .title-pause:hover, .title-quit:hover, .title-audio:hover{
+  .title-pause:hover, .title-quit:hover, .title-audio:hover, .title-speed:hover{
     color: brown;
   }
-  .pause:hover,.quit:hover, .audio:hover{
+  .pause:hover,.quit:hover, .audio:hover, .speed:hover{
     scale: 1.08;
   }
   #list-button-quit{
@@ -138,6 +138,7 @@
     left: 331px;
     animation: floatIn 1s ease-in-out;
   }
+
   #show-dialog-game{
     display: none;
   }
@@ -216,7 +217,7 @@
     scale: 1.8;
     color: brown;
   }
-  .resume-gaming, .close-guiness{
+  .resume-gaming, .close-guiness, .close-speed{
     text-align: center;
   }
   #list-fake-button{
@@ -239,12 +240,12 @@
   .volume{
     width: 30px;
   }
-  .audio-game{
+  .audio-game, .speed-game{
     margin: 0px auto;
     margin-top: -9px;
     scale: 0.9;
   }
-  .audio-game:hover{
+  .audio-game:hover, .speed-game:hover{
     scale: 1;
     color: brown;
   }
@@ -279,6 +280,12 @@
       height: 25px;
       background-image: url(../image/client/thumb.png);
       background-size: cover;
+  }
+  .speed-table{
+    margin-top: 100px;
+  }
+  .speed-game{
+    margin-top: 100px;
   }
   /* #dialog-history-playing{
     display: none;

@@ -77,7 +77,6 @@ function showQuitGameDialog(){
             document.getElementById('show-dialog-game').style.display = 'none';
             document.getElementById('hoursglass').src = './image/client/hourglass.gif';
             resumeGame();
-            document.getElementById('backgroundMusic').pause();
         })
         elementOutQuitShow.addEventListener('click', ()=>{
             document.getElementById('show-dialog-game').style.display = 'none';
