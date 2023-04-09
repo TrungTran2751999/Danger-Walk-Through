@@ -7,4 +7,4 @@
 5. DOM
 ## THÀNH QUẢ ĐẠT ĐƯỢC
 1. link Git: https://github.com/TrungTran2751999/game-Dangerous-Walk-through
-2. link sản phẩm: https://trungtran2751999.github.io/game-Dangerous-Walk-through/
+2. link sản phẩm: https://trungtran2751999.github.io/Danger-Walk-Through
