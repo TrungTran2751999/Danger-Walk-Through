@@ -10,6 +10,7 @@ body{
     cursor: url(../image/client/cusor.png), auto;
     overflow-y: hidden; /* Hide vertical scrollbar */
     overflow-x: hidden; /* Hide horizontal scrollbar */
+    background-image: url(../image/backgroundGame.jpg);
 }
 .total-container{
     margin-left: 426px;
